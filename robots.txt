@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ruu070324-sketch.github.io/rakuten-note/sitemap.xml
