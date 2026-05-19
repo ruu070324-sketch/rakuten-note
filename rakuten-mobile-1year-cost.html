@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楽天モバイルを1年使った実コスト検証 — 楽天経済圏ノート</title>
+<meta name="description" content="楽天モバイルの最強プランを1年運用した実支出データ。月額の中央値、データ通信の使い心地、SPU貢献まで含めて総合的に検証しました。">
+<meta property="og:title" content="楽天モバイルを1年使った実コスト検証">
+<meta property="og:description" content="楽天モバイル最強プラン、1年運用の実支出データ。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+  .article__back { display: inline-block; margin-bottom: 2rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .article__back:hover { color: var(--crimson); }
+  .article__cat { font-size: 0.75rem; letter-spacing: 0.3em; color: var(--crimson); font-weight: 700; }
+  .article__title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.3; font-weight: 700;
+    margin: 1rem 0 1.5rem;
+  }
+  .article__meta {
+    display: flex; gap: 1.5rem; font-size: 0.85rem;
+    color: var(--ink-soft);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(26, 22, 18, 0.15);
+    margin-bottom: 3rem;
+  }
+  .article__body p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.95; }
+  .article__body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    margin: 3rem 0 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--crimson);
+  }
+  .article__body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem;
+  }
+  .article__body ul { margin: 0 0 1.5rem 1.5rem; }
+  .article__body li { margin-bottom: 0.5rem; }
+  .pullquote {
+    font-family: var(--font-display);
+    font-size: 1.6rem; line-height: 1.5;
+    color: var(--crimson);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 2rem 0;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .ad-slot {
+    background: var(--cream);
+    border: 1px dashed var(--ink-soft);
+    padding: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-family: var(--font-serif);
+    background: var(--paper);
+    border: 1px solid var(--ink);
+  }
+  .data-table th, .data-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(26, 22, 18, 0.15);
+  }
+  .data-table th {
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+  .data-table td:last-child {
+    text-align: right;
+    color: var(--crimson);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__brand">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark">楽</span>
+        <span class="logo__text">楽天経済圏ノート</span>
+      </a>
+    </div>
+    <nav class="masthead__nav">
+      <a href="../index.html#latest">最新記事</a>
+      <a href="../index.html#spu">SPU</a>
+      <a href="../index.html#simulator">試算ツール</a>
+    </nav>
+    <div class="masthead__date">
+      <span class="date__day">May 2026</span>
+    </div>
+  </div>
+</header>
+
+<article class="article">
+  <a href="../index.html" class="article__back">← 一覧に戻る</a>
+  <span class="article__cat">比較検証</span>
+  <h1 class="article__title">楽天モバイルを1年使った実コスト検証</h1>
+  <div class="article__meta">
+    <span>2026.05.19</span>
+    <span>読了 10分</span>
+    <span>Ruu</span>
+  </div>
+
+  <div class="article__body">
+
+    <p>
+      楽天モバイルは「データ無制限で月額3,278円」という強烈な訴求で広告されることが多い。だが個人の体感では、この金額をフルに払い続けることは稀だ。なぜなら最強プランは段階制で、使った分しか課金されないからだ。
+    </p>
+
+    <p>
+      本記事では、私が1年間、楽天モバイル最強プランをメイン回線として使ったときの月別実支出を公開し、固定費としてどう設計したかを共有する。広告のキャッチコピーではなく、実際の請求書ベースの数字で判断したい人向け。
+    </p>
+
+    <h2>結論：年間の平均月額は約2,200円だった</h2>
+
+    <p>
+      1年トータルの請求金額を月数で割った中央値は<strong>2,178円</strong>。最強プランの上限である3,278円を払った月は12ヶ月中3ヶ月だけで、それ以外は3GB以内に収まる1,078円か、20GB以内の2,178円で済んだ。
+    </p>
+
+    <p>
+      ここから「楽天モバイル＝月3,278円固定」というイメージは、ヘビーユーザー以外には当てはまらないと言える。
+    </p>
+
+    <div class="pullquote">
+      「広告される最大料金は、ユーザーの実利用と一致しないことが多い。」
+    </div>
+
+    <h2>月別の実支出データ</h2>
+
+    <p>
+      自宅Wi-Fi主体、平日通勤と週末の外出で使用、動画ストリーミングは外でほぼ見ない、というやや軽めの使い方での実績だ。
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>月</th>
+          <th>使用データ量</th>
+          <th>月額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2025年6月</td><td>2.4 GB</td><td>1,078円</td></tr>
+        <tr><td>2025年7月（旅行有）</td><td>18.7 GB</td><td>2,178円</td></tr>
+        <tr><td>2025年8月（帰省有）</td><td>22.1 GB</td><td>3,278円</td></tr>
+        <tr><td>2025年9月</td><td>2.9 GB</td><td>1,078円</td></tr>
+        <tr><td>2025年10月</td><td>4.2 GB</td><td>2,178円</td></tr>
+        <tr><td>2025年11月</td><td>2.1 GB</td><td>1,078円</td></tr>
+        <tr><td>2025年12月（年末出張）</td><td>24.5 GB</td><td>3,278円</td></tr>
+        <tr><td>2026年1月</td><td>2.8 GB</td><td>1,078円</td></tr>
+        <tr><td>2026年2月</td><td>3.5 GB</td><td>2,178円</td></tr>
+        <tr><td>2026年3月（旅行有）</td><td>21.2 GB</td><td>3,278円</td></tr>
+        <tr><td>2026年4月</td><td>2.6 GB</td><td>1,078円</td></tr>
+        <tr><td>2026年5月</td><td>3.1 GB</td><td>1,078円</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      合計は<strong>22,834円</strong>、月平均1,903円、中央値2,178円。年間で2万円台前半に収まる計算だ。
+    </p>
+
+    <h2>通信品質：地下と建物内で差が出る</h2>
+
+    <p>
+      1年使った正直な印象として、屋外の通信品質は問題ない。動画再生もテレビ会議も問題なくこなせる。ただし以下のシーンでは不安定さがあった。
+    </p>
+
+    <ul>
+      <li>地下鉄の駅構内（一部の路線・駅）</li>
+      <li>古いビルや地下フロアの店内</li>
+      <li>都心の超混雑時間帯（バスターミナル付近など）</li>
+    </ul>
+
+    <p>
+      これらは au 回線でローミングしてくれる仕組みがあるが、たまにつながりにくい瞬間がある。私はサブ回線として povo の0円運用を併用していて、メイン回線が不調なときに切り替える運用で凌いでいる。
+    </p>
+
+    <h2>SPU貢献の側面</h2>
+
+    <p>
+      楽天モバイル契約だけで楽天市場のSPUが+4倍積まれる。月の楽天市場利用が2万円なら、SPU4倍分で月800ポイント、年間9,600ポイントの貢献。
+    </p>
+
+    <p>
+      この9,600ポイントは「通信費の実質割引」と見なすこともできる。月平均1,903円の楽天モバイル料金から年間9,600円分のポイントを差し引くと、<strong>実質的な通信費は年間13,234円、月平均1,103円</strong>になる。
+    </p>
+
+    <p>
+      もちろんポイントの価値はキャッシュより一段低く見るべきで、楽天市場で実際に使う前提でないとこの計算は成り立たない。ただ、楽天市場をある程度の頻度で利用する人にとっては、通信費の実コストはかなり下がる構造になっている。
+    </p>
+
+    <h2>他社との比較：何を捨てて何を取るか</h2>
+
+    <p>
+      同じ価格帯の通信プランと比べたときの位置づけ。
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>プラン</th>
+          <th>20GB月額</th>
+          <th>通信品質</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>楽天モバイル最強プラン</td><td>2,178円</td><td>都市部○・地下△</td></tr>
+        <tr><td>povo 20GB（30日）</td><td>2,700円</td><td>au回線・◎</td></tr>
+        <tr><td>ahamo 20GB</td><td>2,970円</td><td>ドコモ回線・◎</td></tr>
+        <tr><td>LINEMO 20GB</td><td>2,728円</td><td>ソフトバンク回線・◎</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      料金の絶対値だけ見れば楽天モバイルが最安。通信品質を取るならpovo・ahamo・LINEMO。判断のポイントは生活圏が楽天回線でカバーされているかどうか、サブ回線を持てるか、そして楽天市場をどれだけ使うかになる。
+    </p>
+
+    <h2>こんな人に向く、向かない</h2>
+
+    <h3>向く人</h3>
+    <ul>
+      <li>普段は自宅Wi-Fi中心で、外出時の通信は数GBで足りる</li>
+      <li>楽天市場を月1万円以上使う</li>
+      <li>サブ回線を持てる（家族のキャリア回線、povo無料運用など）</li>
+      <li>通信品質より料金を優先したい</li>
+    </ul>
+
+    <h3>向かない人</h3>
+    <ul>
+      <li>地下や建物内で常に高品質な通信が必要（営業職など）</li>
+      <li>楽天市場をほぼ使わない</li>
+      <li>1台のメイン回線で完結させたい</li>
+      <li>テザリングを業務で多用する</li>
+    </ul>
+
+    <h2>まとめ</h2>
+
+    <p>
+      楽天モバイルは「軽量〜中量ユーザー × 楽天市場利用者」にとっては実コスト月1,000円台で収まる現実的な選択肢だ。広告される3,278円は上限であって、ほとんどの月はそれ以下になる。
+    </p>
+
+    <p>
+      ただし通信品質の弱点はあるので、メイン回線として割り切るならサブ回線の併用が事実上の前提になる。検討するなら、まずは自分の生活圏が楽天回線エリアに入っているか公式エリアマップで確認したうえで、povoなどの0円サブを保険として持つ前提で乗り換えるのが安全な進め方だと思う。
+    </p>
+
+    <p>
+      なおSPUと合算した実コストは<a href="../index.html#simulator">シミュレーター</a>で試算できる。固定費の楽天カード集約と合わせれば、通信費が「ポイント還元込みで実質マイナス」になるラインも見えてくる。
+    </p>
+
+    <p style="color: var(--ink-soft); font-size: 0.9rem; font-style: italic; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(26,22,18,0.15);">
+      ※本記事は執筆時点の情報をもとにした個人の実利用データです。各プランの料金体系・キャンペーン・通信品質は今後変更されることがあります。契約前に必ず公式の最新情報をご確認ください。
+    </p>
+
+    <div class="ad-slot">
+      [広告枠] AdSense審査通過後、ここに広告コードを貼る
+    </div>
+
+  </div>
+</article>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <span class="logo__mark">楽</span>
+      <span>楽天経済圏ノート</span>
+    </div>
+    <p class="foot__disclaimer">
+      本サイトは個人運営の情報メモです。記載内容は執筆時点の情報に基づくものであり、最新情報は必ず各サービスの公式サイトでご確認ください。<br>
+      ※「楽天」「楽天市場」等は楽天グループ株式会社の登録商標です。本サイトは楽天グループとは無関係の個人サイトです。
+    </p>
+    <p class="foot__copy">© 2026 Rakuten Economy Notebook</p>
+  </div>
+</footer>
+
+</body>
+</html>
