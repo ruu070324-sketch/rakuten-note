@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+============================================================
+記事テンプレート 使い方
+============================================================
+1. このファイルを posts/ フォルダにコピー
+2. ファイル名を記事の英語スラッグに変更 (例: fixed-cost-management.html)
+3. 以下の {{ }} で囲まれた箇所を全部書き換える:
+   - {{TITLE}}            ... 記事タイトル
+   - {{SUBTITLE}}         ... サブタイトル(なくてもOK、消す)
+   - {{DESCRIPTION}}      ... meta description (120文字程度)
+   - {{CATEGORY}}         ... カテゴリ名 (SPU / 家計自動化 / ポイント運用 / 比較検証 など)
+   - {{DATE}}             ... 公開日 (例: 2026.05.20)
+   - {{READTIME}}         ... 読了時間 (例: 8分)
+   - {{BODY}}             ... 本文HTML (Claudeが出力したHTMLをそのまま貼る)
+4. 同時に index.html の最新記事リストに追加する
+   (記事カードのコピペテンプレは index-card-template.html を参照)
+============================================================
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} — 楽天経済圏ノート</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+  .article__back { display: inline-block; margin-bottom: 2rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .article__back:hover { color: var(--crimson); }
+  .article__cat { font-size: 0.75rem; letter-spacing: 0.3em; color: var(--crimson); font-weight: 700; }
+  .article__title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.3; font-weight: 700;
+    margin: 1rem 0 1.5rem;
+  }
+  .article__meta {
+    display: flex; gap: 1.5rem; font-size: 0.85rem;
+    color: var(--ink-soft);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(26, 22, 18, 0.15);
+    margin-bottom: 3rem;
+  }
+  .article__body p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.95; }
+  .article__body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    margin: 3rem 0 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--crimson);
+  }
+  .article__body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem;
+  }
+  .article__body ul { margin: 0 0 1.5rem 1.5rem; }
+  .article__body li { margin-bottom: 0.5rem; }
+  .pullquote {
+    font-family: var(--font-display);
+    font-size: 1.6rem; line-height: 1.5;
+    color: var(--crimson);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 2rem 0;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .ad-slot {
+    background: var(--cream);
+    border: 1px dashed var(--ink-soft);
+    padding: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .affiliate {
+    background: var(--cream);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--gold);
+  }
+  .affiliate__label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__brand">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark">楽</span>
+        <span class="logo__text">楽天経済圏ノート</span>
+      </a>
+    </div>
+    <nav class="masthead__nav">
+      <a href="../index.html#latest">最新記事</a>
+      <a href="../index.html#spu">SPU</a>
+      <a href="../index.html#simulator">試算ツール</a>
+    </nav>
+    <div class="masthead__date">
+      <span class="date__day">{{DATE}}</span>
+    </div>
+  </div>
+</header>
+
+<article class="article">
+  <a href="../index.html" class="article__back">← 一覧に戻る</a>
+  <span class="article__cat">{{CATEGORY}}</span>
+  <h1 class="article__title">{{TITLE}}</h1>
+  <div class="article__meta">
+    <span>{{DATE}}</span>
+    <span>読了 {{READTIME}}</span>
+    <span>Ruu</span>
+  </div>
+
+  <div class="article__body">
+
+    {{BODY}}
+
+    <p style="color: var(--ink-soft); font-size: 0.9rem; font-style: italic; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(26,22,18,0.15);">
+      ※本記事は執筆時点の情報をもとにした個人の検証メモです。各サービスの内容・倍率・条件は変更されることがあります。実行前に必ず公式の最新情報をご確認ください。
+    </p>
+
+    <div class="ad-slot">
+      [広告枠] AdSense審査通過後、ここに広告コードを貼る
+    </div>
+
+  </div>
+</article>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <span class="logo__mark">楽</span>
+      <span>楽天経済圏ノート</span>
+    </div>
+    <p class="foot__disclaimer">
+      本サイトは個人運営の情報メモです。記載内容は執筆時点の情報に基づくものであり、最新情報は必ず各サービスの公式サイトでご確認ください。<br>
+      ※「楽天」「楽天市場」等は楽天グループ株式会社の登録商標です。本サイトは楽天グループとは無関係の個人サイトです。
+    </p>
+    <p class="foot__copy">© 2026 Rakuten Economy Notebook</p>
+  </div>
+</footer>
+
+</body>
+</html>

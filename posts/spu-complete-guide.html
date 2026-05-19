@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPU 16倍ルートの再設計 — 楽天経済圏ノート</title>
+<meta name="description" content="2026年5月時点でのSPU達成可能倍率を、コストとリターンの両面から再計算する">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+  .article__back { display: inline-block; margin-bottom: 2rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .article__back:hover { color: var(--crimson); }
+  .article__cat { font-size: 0.75rem; letter-spacing: 0.3em; color: var(--crimson); font-weight: 700; }
+  .article__title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.3; font-weight: 700;
+    margin: 1rem 0 1.5rem;
+  }
+  .article__meta {
+    display: flex; gap: 1.5rem; font-size: 0.85rem;
+    color: var(--ink-soft);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(26, 22, 18, 0.15);
+    margin-bottom: 3rem;
+  }
+  .article__body p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.95; }
+  .article__body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    margin: 3rem 0 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--crimson);
+  }
+  .article__body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem;
+  }
+  .article__body ul { margin: 0 0 1.5rem 1.5rem; }
+  .article__body li { margin-bottom: 0.5rem; }
+  .pullquote {
+    font-family: var(--font-display);
+    font-size: 1.6rem; line-height: 1.5;
+    color: var(--crimson);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 2rem 0;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .ad-slot {
+    background: var(--cream);
+    border: 1px dashed var(--ink-soft);
+    padding: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__brand">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark">楽</span>
+        <span class="logo__text">楽天経済圏ノート</span>
+      </a>
+    </div>
+    <nav class="masthead__nav">
+      <a href="../index.html#latest">最新記事</a>
+      <a href="../index.html#spu">SPU</a>
+      <a href="../index.html#simulator">試算ツール</a>
+    </nav>
+    <div class="masthead__date">
+      <span class="date__day">May 2026</span>
+    </div>
+  </div>
+</header>
+
+<article class="article">
+  <a href="../index.html" class="article__back">← 一覧に戻る</a>
+  <span class="article__cat">SPU</span>
+  <h1 class="article__title">SPU 16倍ルートの再設計<br>2026年5月版・改悪後の現実解</h1>
+  <div class="article__meta">
+    <span>2026.05.18</span>
+    <span>読了 12分</span>
+    <span>Ruu</span>
+  </div>
+
+  <div class="article__body">
+    <p>
+      かつてSPUは「ポイ活の聖地」と呼ばれていた。最大倍率を素直に積めば、ライト層でも10倍以上は普通に届く設計だった。
+      しかし2024年以降の度重なる改定で、その構造はだいぶ変わった。本記事では、2026年5月時点での「個人が再現可能なルート」を、コストと得点で並べ直す。
+    </p>
+
+    <h2>結論：いまの現実的な上限</h2>
+    <p>
+      先に結論。サラリーマン世帯が無理せず達成できるSPUは、現状おおむね <strong>7〜9倍前後</strong>。
+      これより上を狙うには、楽天トラベルや楽天ブックスなど、必ずしも生活導線に乗らないサービスを月次で発生させる必要があり、機会費用が見合わない。
+    </p>
+
+    <div class="pullquote">
+      「上限を狙うより、達成しやすい7倍を毎月確実に積むほうが、年間ポイントは多い。」
+    </div>
+
+    <h2>達成しやすい項目から積む</h2>
+
+    <h3>1. 楽天カード（+2倍）</h3>
+    <p>
+      ここはコスト0で固定で取れる。年会費無料カードを発行し、楽天市場での支払いに設定するだけ。家族カードを発行してSPU対象に含めるかは家計の合算判断。
+    </p>
+
+    <h3>2. 楽天モバイル（+4倍）</h3>
+    <p>
+      最大のテコ。通信費を楽天モバイルに切り替えるだけで4倍。最強プランの料金は使用データ量に応じて段階制で、月1,000円台から始まる。
+      ただし通信品質は地域差が大きい。都市部のサブ回線としては優秀だが、メイン回線として困らないかは、楽天モバイルのエリア判定を必ず確認すること。
+    </p>
+
+    <h3>3. 楽天銀行（+0.5倍）</h3>
+    <p>
+      楽天カードの引き落とし口座を楽天銀行にすることで達成。コスト0。給与振込先にする必要はなく、引き落とし設定だけでよい。
+    </p>
+
+    <h3>4. 楽天証券・投信（+0.5倍）</h3>
+    <p>
+      投信を月3万円買い、楽天カード決済または楽天キャッシュ決済にすることで達成。新NISAの積立枠と相性が良いため、投資をする人なら自然に達成できる。
+      ただし「SPUのために投資を始める」のは順序が逆。
+    </p>
+
+    <h2>達成コストが重い項目</h2>
+    <p>
+      逆に、生活導線にハマらないサービスは無視するのが正解。たとえば楽天トラベルは月5,000円以上の利用で+1倍だが、毎月旅行する人でない限り、買わずに見送るほうがいい。
+    </p>
+
+    <ul>
+      <li>楽天トラベル：毎月利用するなら有効、しないなら捨てる</li>
+      <li>楽天ファッション：自分の購買サイクルと合うかで判断</li>
+      <li>楽天ビューティ：実店舗のサロン利用が前提</li>
+    </ul>
+
+    <h2>撤退条件もあらかじめ決める</h2>
+    <p>
+      SPUは今後も改定が続く前提で運用すべきだ。私が個人的に設定している撤退条件は次のとおり。
+    </p>
+    <ul>
+      <li>楽天モバイルの月額が3,000円を超える価格改定があったら、別キャリアと比較し直す</li>
+      <li>カード還元率が改悪されたら、年間獲得ポイントを再計算する</li>
+      <li>SPU項目が半分以下に減ったら、経済圏移動を検討する</li>
+    </ul>
+
+    <h2>まとめ</h2>
+    <p>
+      上限を追うのではなく、生活導線に自然に乗る5〜7項目だけ拾う。これで7倍前後は安定して維持できる。
+      重要なのは「決めたら触らない」運用設計で、月次の作業を増やさないこと。ポイ活が労働になった時点で、それは副業として時給を計算するべきものになる。
+    </p>
+
+    <p style="color: var(--ink-soft); font-size: 0.9rem; font-style: italic; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(26,22,18,0.15);">
+      ※本記事は執筆時点の情報をもとにした個人の検証メモです。楽天グループ各社のサービス内容・倍率・条件は変更されることがあります。実行前に必ず公式の最新情報をご確認ください。
+    </p>
+
+    <div class="ad-slot">
+      [広告枠] AdSense審査通過後、ここに広告コードを貼る予定
+    </div>
+
+  </div>
+</article>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <span class="logo__mark">楽</span>
+      <span>楽天経済圏ノート</span>
+    </div>
+    <p class="foot__disclaimer">
+      本サイトは個人運営の情報メモです。記載内容は執筆時点の情報に基づくものであり、最新情報は必ず各サービスの公式サイトでご確認ください。<br>
+      ※「楽天」「楽天市場」等は楽天グループ株式会社の登録商標です。本サイトは楽天グループとは無関係の個人サイトです。
+    </p>
+    <p class="foot__copy">© 2026 Rakuten Economy Notebook</p>
+  </div>
+</footer>
+
+</body>
+</html>

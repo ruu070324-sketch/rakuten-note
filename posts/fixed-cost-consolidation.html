@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>固定費を楽天カードに集約する手順 — 楽天経済圏ノート</title>
+<meta name="description" content="電気・ガス・通信・サブスクをどう寄せるか。集約の落とし穴と、あえて寄せないほうがいい支払いの判断軸まで整理しました。">
+<meta property="og:title" content="固定費を楽天カードに集約する手順">
+<meta property="og:description" content="電気・ガス・通信・サブスクをどう寄せるか。集約の落とし穴と判断軸。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+  .article__back { display: inline-block; margin-bottom: 2rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .article__back:hover { color: var(--crimson); }
+  .article__cat { font-size: 0.75rem; letter-spacing: 0.3em; color: var(--crimson); font-weight: 700; }
+  .article__title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.3; font-weight: 700;
+    margin: 1rem 0 1.5rem;
+  }
+  .article__meta {
+    display: flex; gap: 1.5rem; font-size: 0.85rem;
+    color: var(--ink-soft);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(26, 22, 18, 0.15);
+    margin-bottom: 3rem;
+  }
+  .article__body p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.95; }
+  .article__body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    margin: 3rem 0 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--crimson);
+  }
+  .article__body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem;
+  }
+  .article__body ul { margin: 0 0 1.5rem 1.5rem; }
+  .article__body li { margin-bottom: 0.5rem; }
+  .pullquote {
+    font-family: var(--font-display);
+    font-size: 1.6rem; line-height: 1.5;
+    color: var(--crimson);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 2rem 0;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .ad-slot {
+    background: var(--cream);
+    border: 1px dashed var(--ink-soft);
+    padding: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__brand">
+      <a href="../index.html" class="logo">
+        <span class="logo__mark">楽</span>
+        <span class="logo__text">楽天経済圏ノート</span>
+      </a>
+    </div>
+    <nav class="masthead__nav">
+      <a href="../index.html#latest">最新記事</a>
+      <a href="../index.html#spu">SPU</a>
+      <a href="../index.html#simulator">試算ツール</a>
+    </nav>
+    <div class="masthead__date">
+      <span class="date__day">May 2026</span>
+    </div>
+  </div>
+</header>
+
+<article class="article">
+  <a href="../index.html" class="article__back">← 一覧に戻る</a>
+  <span class="article__cat">家計自動化</span>
+  <h1 class="article__title">固定費を楽天カードに集約する手順</h1>
+  <div class="article__meta">
+    <span>2026.05.10</span>
+    <span>読了 9分</span>
+    <span>Ruu</span>
+  </div>
+
+  <div class="article__body">
+
+    <p>
+      ポイ活で一番つまらなくて、一番効くのが固定費の集約だと思っている。毎月勝手に発生する支払いをカード払いにしておくだけで、年単位で見れば数千〜数万ポイントが何もせず積み上がる。「自動化された家計の土台」と呼んでいい工程だ。
+    </p>
+
+    <p>
+      ただし全部を一枚のカードに寄せればいいかというと、そうでもない。本記事では、私自身が実家計で運用している集約手順と、あえて寄せていない例外をまとめる。
+    </p>
+
+    <h2>結論：寄せる優先順位はこの順</h2>
+
+    <p>
+      迷うなら、上から順番に手をつければいい。下にいくほど作業コストが高い割にリターンが小さくなる傾向がある。
+    </p>
+
+    <ul>
+      <li>① 通信費（携帯・自宅ネット）</li>
+      <li>② 電気・ガス</li>
+      <li>③ サブスクリプション全般</li>
+      <li>④ 保険料（できるものから）</li>
+      <li>⑤ 公共料金（水道・税金）</li>
+    </ul>
+
+    <div class="pullquote">
+      「固定費の集約は、一度やれば二度とやらない。だからこそ最初に正しい順番でやる。」
+    </div>
+
+    <h2>① 通信費を寄せる</h2>
+
+    <p>
+      まず携帯のキャリア料金とプロバイダ料金。これは難易度が低く、効果も大きい。各社のマイページにログインし、支払い方法変更から楽天カードを登録するだけ。
+    </p>
+
+    <p>
+      ここで一段階上を狙うなら、携帯そのものを楽天モバイルに乗り換えてしまう手もある。SPU倍率が積み上がるうえ、楽天カードでの支払いも同時に達成できる。ただし通信品質が地域によって変動するので、メイン回線として置けるかは事前に確認が必要だ。
+    </p>
+
+    <h3>注意点</h3>
+    <p>
+      キャリアによっては、口座振替よりカード払いで月額が安くなる場合がある（口座振替手数料が乗らないため）。寄せる前に料金明細を確認すると、ポイント以外のメリットも見えることがある。
+    </p>
+
+    <h2>② 電気・ガスを寄せる</h2>
+
+    <p>
+      自由化以降、ほぼすべての電力会社・ガス会社がクレジット払いに対応している。マイページから5分で変更できる。年間8〜15万円規模の支出なので、1%還元でも年間800〜1,500ポイントは確実に取れる。
+    </p>
+
+    <p>
+      ここでさらに踏み込むなら、楽天でんき・楽天ガスへの切り替えという選択肢もあるが、地域や使用量によっては大手電力よりも割高になるケースがあるので、必ず料金シミュレーションをかけてから判断したい。「楽天だから得」とは限らない。
+    </p>
+
+    <h2>③ サブスクリプションを寄せる</h2>
+
+    <p>
+      Netflix、Spotify、Amazonプライム、AdobeCC、各種クラウドストレージ。気づくと月1〜2万円になっているサブスク群を、まずは棚卸ししたうえで楽天カードに付け替える。
+    </p>
+
+    <p>
+      棚卸しの過程で「実は使っていなかった」サービスが必ず1つ2つ出てくる。これは集約作業の副産物として大きい。集約のついでに月数千円の支出が消えることもある。
+    </p>
+
+    <h3>意外と漏れがちな支払い</h3>
+    <ul>
+      <li>iCloudやGoogle Oneのストレージ追加料金</li>
+      <li>家族の名義になっているアプリ内サブスク</li>
+      <li>年払いで存在を忘れているドメイン代やサーバー代</li>
+    </ul>
+
+    <h2>④ 保険料は「カード払い可」のものから</h2>
+
+    <p>
+      生命保険・医療保険はカード払い対応していない商品もまだ多いが、自動車保険・火災保険はほぼ全社対応している。年払いにしてカードで切ると、年5,000〜15,000ポイント規模になることもある。
+    </p>
+
+    <p>
+      ただし、保険料を月払いから年払いに変える際、支払いタイミングが大きくズレるので、キャッシュフロー上の影響を確認してから切り替えること。
+    </p>
+
+    <h2>⑤ 公共料金・税金</h2>
+
+    <p>
+      水道料金や自動車税、固定資産税。これらは自治体によってカード払い可否が異なる。可能な場合でも「決済手数料」が乗ることがあり、還元率1%以下だと損益が逆転する場合がある。
+    </p>
+
+    <p>
+      自動車税のように年1回まとまった金額が動くものは、たとえ手数料が0.5%乗っても1%還元なら差し引きでプラスになる計算が成り立つ。物件によりけりなので、自治体のサイトで手数料を必ず確認する。
+    </p>
+
+    <h2>あえて寄せないほうがいい支払い</h2>
+
+    <p>
+      逆に、私が楽天カードに寄せていない支払いもいくつかある。
+    </p>
+
+    <h3>家賃</h3>
+    <p>
+      家賃をカード払いにできる物件は限られているし、可能でも「手数料を借主負担」とされていることが多い。1%還元で2%手数料を払うのは本末転倒なので見送る。
+    </p>
+
+    <h3>事業経費</h3>
+    <p>
+      個人事業主の場合、生活用カードと事業用カードは分けたほうが確定申告がラク。ポイントは多少落ちても、税務処理のコストを下げるほうが時給換算で得になる。
+    </p>
+
+    <h2>集約後の運用：定期的な点検が必要</h2>
+
+    <p>
+      集約は「一度やったら忘れる」のが理想だが、年に一度は次の点検をしている。
+    </p>
+
+    <ul>
+      <li>楽天カードの還元率や条件が改定されていないか</li>
+      <li>支払い先のサービスが値上げされていないか</li>
+      <li>使っていないサブスクが復活していないか</li>
+      <li>引き落とし口座の残高が十分か</li>
+    </ul>
+
+    <h2>まとめ</h2>
+
+    <p>
+      固定費集約は、地味だが家計自動化のなかで最も投資対効果が高い工程だ。寄せる順番は通信費→光熱費→サブスク→保険→公共料金。家賃と事業経費は寄せない。1日かければ年単位で効いてくる仕組みが完成する。
+    </p>
+
+    <p>
+      なお実際の獲得ポイントは、サイトのトップにある<a href="../index.html#simulator">簡易シミュレーター</a>で計算できる。自分の家計で実際にどれくらいになるか入れてみると、面倒な切り替え作業のモチベーションになるはずだ。
+    </p>
+
+    <p style="color: var(--ink-soft); font-size: 0.9rem; font-style: italic; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(26,22,18,0.15);">
+      ※本記事は執筆時点の情報をもとにした個人の検証メモです。楽天カードの還元率や各サービスの条件は変更されることがあります。実行前に必ず公式の最新情報をご確認ください。
+    </p>
+
+    <div class="ad-slot">
+      [広告枠] AdSense審査通過後、ここに広告コードを貼る
+    </div>
+
+  </div>
+</article>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <span class="logo__mark">楽</span>
+      <span>楽天経済圏ノート</span>
+    </div>
+    <p class="foot__disclaimer">
+      本サイトは個人運営の情報メモです。記載内容は執筆時点の情報に基づくものであり、最新情報は必ず各サービスの公式サイトでご確認ください。<br>
+      ※「楽天」「楽天市場」等は楽天グループ株式会社の登録商標です。本サイトは楽天グループとは無関係の個人サイトです。
+    </p>
+    <p class="foot__copy">© 2026 Rakuten Economy Notebook</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楽天経済圏ノート — SPU・ポイ活・家計最適化の実験室</title>
+<meta name="description" content="楽天SPUの仕組み、ポイント還元の最大化、家計の自動化について書く実験ノート。再現性のある検証だけを残します。">
+<meta property="og:title" content="楽天経済圏ノート">
+<meta property="og:description" content="SPU・ポイ活・家計自動化の実験記録">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__brand">
+      <a href="/" class="logo">
+        <span class="logo__mark">楽</span>
+        <span class="logo__text">楽天経済圏ノート</span>
+      </a>
+      <span class="masthead__tagline">Rakuten Economy Notebook</span>
+    </div>
+    <nav class="masthead__nav">
+      <a href="#latest">最新記事</a>
+      <a href="#spu">SPU</a>
+      <a href="#simulator">試算ツール</a>
+      <a href="#about">運営者</a>
+    </nav>
+    <div class="masthead__date">
+      <span class="date__no">Vol. 001</span>
+      <span class="date__day">May 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== ヒーロー（雑誌の表紙風） ===== -->
+<section class="cover">
+  <div class="cover__grid">
+    <div class="cover__label">
+      <span>SPECIAL ISSUE</span>
+      <span>楽天経済圏 完全攻略</span>
+    </div>
+    <h1 class="cover__title">
+      <span class="title__line">ポイントは、</span>
+      <span class="title__line title__line--accent">寝てる間に</span>
+      <span class="title__line">貯まる。</span>
+    </h1>
+    <p class="cover__lead">
+      SPUを理解し、固定費を集約し、決済導線を整える。<br>
+      たった3手で年間50,000ポイント以上を「自動で」回収する仕組みについて。
+    </p>
+    <div class="cover__meta">
+      <div class="meta__item">
+        <span class="meta__label">想定読了時間</span>
+        <span class="meta__value">12 min</span>
+      </div>
+      <div class="meta__item">
+        <span class="meta__label">難易度</span>
+        <span class="meta__value">★★☆</span>
+      </div>
+      <div class="meta__item">
+        <span class="meta__label">再現性</span>
+        <span class="meta__value">高</span>
+      </div>
+    </div>
+    <a href="posts/spu-complete-guide.html" class="cover__cta">特集を読む →</a>
+  </div>
+  <div class="cover__numeral" aria-hidden="true">01</div>
+</section>
+
+<!-- ===== 最新記事リスト ===== -->
+<section id="latest" class="latest">
+  <div class="section__head">
+    <span class="section__tag">FEATURED</span>
+    <h2 class="section__title">最新の検証ノート</h2>
+    <p class="section__sub">机上の空論ではなく、自分の家計で試した結果だけを記録しています。</p>
+  </div>
+
+  <div class="articles">
+    <!-- 記事カード 1 -->
+    <article class="card card--lead">
+      <a href="posts/spu-complete-guide.html" class="card__link">
+        <div class="card__meta">
+          <span class="card__cat">SPU</span>
+          <span class="card__date">2026.05.18</span>
+        </div>
+        <h3 class="card__title">SPU 16倍ルートの再設計<br><span class="card__title--sub">2026年5月版・改悪後の現実解</span></h3>
+        <p class="card__excerpt">
+          楽天モバイル・楽天証券・楽天カードを軸に、改悪を反映した上で達成可能なSPU倍率を計算し直した。結論として個人が現実的に届く上限は◯倍前後。
+        </p>
+        <span class="card__more">続きを読む</span>
+      </a>
+    </article>
+
+    <!-- 記事カード 2 -->
+    <article class="card">
+      <a href="posts/fixed-cost-consolidation.html" class="card__link">
+        <div class="card__meta">
+          <span class="card__cat">家計自動化</span>
+          <span class="card__date">2026.05.10</span>
+        </div>
+        <h3 class="card__title">固定費を楽天カードに集約する手順</h3>
+        <p class="card__excerpt">
+          電気・ガス・通信・サブスクをどう寄せるか。落とし穴と、寄せすぎないほうがいい支払いの判断軸。
+        </p>
+        <span class="card__more">続きを読む</span>
+      </a>
+    </article>
+
+    <!-- 記事カード 3 -->
+    <article class="card">
+      <a href="posts/point-investment.html" class="card__link">
+        <div class="card__meta">
+          <span class="card__cat">ポイント運用</span>
+          <span class="card__date">2026.05.03</span>
+        </div>
+        <h3 class="card__title">ポイント投資 vs 現金投資の境界線</h3>
+        <p class="card__excerpt">
+          楽天ポイントを投信に回すべきか、消費に使うべきか。期待値と機会費用の話。
+        </p>
+        <span class="card__more">続きを読む</span>
+      </a>
+    </article>
+
+    <!-- 記事カード 4 -->
+    <article class="card">
+      <a href="posts/rakuten-vs-paypay.html" class="card__link">
+        <div class="card__meta">
+          <span class="card__cat">比較検証</span>
+          <span class="card__date">2026.04.27</span>
+        </div>
+        <h3 class="card__title">楽天とPayPay経済圏の併用設計</h3>
+        <p class="card__excerpt">
+          一極集中ではなく、生活導線で経済圏を分ける考え方。コンビニ・ネット通販・ふるさと納税での使い分け。
+        </p>
+        <span class="card__more">続きを読む</span>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- ===== SPU早見表セクション ===== -->
+<section id="spu" class="spu-table">
+  <div class="section__head section__head--center">
+    <span class="section__tag">REFERENCE</span>
+    <h2 class="section__title">SPU項目 早見メモ</h2>
+    <p class="section__sub">改悪・改定が多いので、月初に必ず最新公式情報を確認すること。</p>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>倍率</th>
+          <th>達成しやすさ</th>
+          <th>月コスト</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>楽天モバイル</td><td>+4倍</td><td>★★★</td><td>1,000円台〜</td></tr>
+        <tr><td>楽天カード</td><td>+2倍</td><td>★★★</td><td>無料</td></tr>
+        <tr><td>楽天証券（投信）</td><td>+0.5倍</td><td>★★★</td><td>3万円積立</td></tr>
+        <tr><td>楽天証券（米株）</td><td>+0.5倍</td><td>★★☆</td><td>3万円購入</td></tr>
+        <tr><td>楽天銀行</td><td>+0.5倍</td><td>★★★</td><td>無料</td></tr>
+        <tr><td>楽天市場アプリ</td><td>+0.5倍</td><td>★★★</td><td>無料</td></tr>
+        <tr><td>楽天トラベル</td><td>+1倍</td><td>★☆☆</td><td>5,000円〜</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caveat">※倍率・条件は変更されることがあります。実行前に公式SPUページで最新条件を確認してください。</p>
+</section>
+
+<!-- ===== 試算ツール ===== -->
+<section id="simulator" class="simulator">
+  <div class="section__head">
+    <span class="section__tag">TOOL</span>
+    <h2 class="section__title">年間獲得ポイント・簡易シミュレーター</h2>
+    <p class="section__sub">月の楽天市場での買い物額と、達成しているSPU倍率を入れるだけ。</p>
+  </div>
+
+  <div class="sim">
+    <div class="sim__inputs">
+      <label class="sim__field">
+        <span>月の楽天市場利用額（円）</span>
+        <input type="number" id="sim-monthly" value="20000" min="0" step="1000">
+      </label>
+      <label class="sim__field">
+        <span>達成SPU倍率（例: 8）</span>
+        <input type="number" id="sim-spu" value="8" min="1" max="20" step="0.5">
+      </label>
+      <label class="sim__field">
+        <span>固定費の楽天カード集約額（月・円）</span>
+        <input type="number" id="sim-fixed" value="30000" min="0" step="1000">
+      </label>
+    </div>
+    <div class="sim__output">
+      <div class="sim__row">
+        <span class="sim__label">楽天市場で年間獲得</span>
+        <span class="sim__value" id="out-market">—</span>
+      </div>
+      <div class="sim__row">
+        <span class="sim__label">固定費カード払いで年間獲得</span>
+        <span class="sim__value" id="out-fixed">—</span>
+      </div>
+      <div class="sim__row sim__row--total">
+        <span class="sim__label">合計（年間）</span>
+        <span class="sim__value" id="out-total">—</span>
+      </div>
+      <p class="sim__note">※あくまで概算。期間限定ポイント・キャンペーン・改悪は反映していません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about" class="about">
+  <div class="about__grid">
+    <div class="about__col">
+      <span class="section__tag">ABOUT</span>
+      <h2 class="about__title">このノートについて</h2>
+    </div>
+    <div class="about__col">
+      <p>
+        家計を整えるのは退屈な作業の積み重ねです。だからこそ「決めたら忘れる」仕組みを作って、自動で回収できる利得は全部回収する。
+      </p>
+      <p>
+        派手なテクニックよりも、再現性と継続性を重視します。改悪があれば撤退条件もちゃんと書きます。
+      </p>
+      <p class="about__sign">— Editor: Ruu</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <span class="logo__mark">楽</span>
+      <span>楽天経済圏ノート</span>
+    </div>
+    <p class="foot__disclaimer">
+      本サイトは個人運営の情報メモです。記載内容は執筆時点の情報に基づくものであり、最新情報は必ず各サービスの公式サイトでご確認ください。本サイトの情報による損害について責任を負いかねます。<br>
+      ※「楽天」「楽天市場」等は楽天グループ株式会社の登録商標です。本サイトは楽天グループとは無関係の個人サイトです。
+    </p>
+    <p class="foot__copy">© 2026 Rakuten Economy Notebook</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

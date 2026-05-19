@@ -1,0 +1,40 @@
+<!--
+============================================================
+記事カード スニペット集
+============================================================
+新しい記事を追加したら、index.html の <div class="articles"> の中に
+このカードをコピペして、{{ }} の部分を書き換える。
+古いカードは下に押し下げて、最新が上にくるように並べ替える。
+============================================================
+-->
+
+<!-- ▼ 通常サイズの記事カード(これを使うことが多い) -->
+<article class="card">
+  <a href="posts/{{FILENAME}}.html" class="card__link">
+    <div class="card__meta">
+      <span class="card__cat">{{CATEGORY}}</span>
+      <span class="card__date">{{DATE}}</span>
+    </div>
+    <h3 class="card__title">{{TITLE}}</h3>
+    <p class="card__excerpt">
+      {{EXCERPT}}
+    </p>
+    <span class="card__more">続きを読む</span>
+  </a>
+</article>
+
+
+<!-- ▼ メイン記事(大きいカード)。トップに1つだけ置く -->
+<article class="card card--lead">
+  <a href="posts/{{FILENAME}}.html" class="card__link">
+    <div class="card__meta">
+      <span class="card__cat">{{CATEGORY}}</span>
+      <span class="card__date">{{DATE}}</span>
+    </div>
+    <h3 class="card__title">{{TITLE}}<br><span class="card__title--sub">{{SUBTITLE}}</span></h3>
+    <p class="card__excerpt">
+      {{EXCERPT}}
+    </p>
+    <span class="card__more">続きを読む</span>
+  </a>
+</article>
